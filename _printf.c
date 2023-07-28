@@ -24,8 +24,6 @@ int _printf(const char *format, ...)
 	va_start(arguments, format);
 
 	loop = form_h(format, str, arguments, cases);
-	
-
 
 	i = _strlen(str);
 	if (loop == 1)
