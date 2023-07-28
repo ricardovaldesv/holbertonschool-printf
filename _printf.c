@@ -8,7 +8,8 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, loop;
+	int i = 0;
+	int loop;
 	char *str = malloc(4096 * sizeof(char));
 	va_list arguments;
 	type_cases *cases = get_cases();
@@ -24,7 +25,11 @@ int _printf(const char *format, ...)
 
 	loop = form_h(format, str, arguments, cases);
 	
+
+
 	i = _strlen(str);
+	if (loop == 1)
+		i++;
 	write(1, str, i);
 	va_end(arguments);
 	free(str);
