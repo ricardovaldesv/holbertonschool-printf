@@ -82,37 +82,46 @@ char sfunct(char *str, va_list arguments)
  * Return: Void
  */
 char dfunct(char *str, va_list arguments)
-		{
-		int num = va_arg(arguments, int);
-		int a = 0;
-		int x;
-		int i;
-		int p;
-		if (num < 0)
-		{
+{
+	int num = va_arg(arguments, int);
+	int a = 0;
+	int x;
+	int i;
+	int p;
+	char is_min = 'f';
+
+	if (num == -2147483648)
+	{
+		num++;
+		is_min = 't';
+	}
+
+	if (num < 0)
+	{
 		str[_strlen(str) + 1] = '\0';
 		str[_strlen(str)] = '-';
-		num = -(num+1);
-		}
+		num = -num;
+	}
 
-		x = num;
-		while(x >= 10)
-		{
+	x = num;
+	while (x >= 10)
+	{
 		x = x / 10;
 		a++;
-		}
-		x = num;
-		for (i = 0; i < a; i++)
-		{
-			p = x / powr(10, (a-i));
-			str[_strlen(str) + 1] = '\0';
-			str[_strlen(str)] = (p + '0');
-			x = x - (p * powr(10, (a - i)));
-		}
-    
+	}
 
-		p = (x+1) % 10;
+	x = num;
+	for (i = 0; i <= a; i++)
+	{
+		p = x / powr(10, (a - i));
 		str[_strlen(str) + 1] = '\0';
 		str[_strlen(str)] = (p + '0');
-		return (0);
+		x = x - (p * powr(10, (a - i)));
+		if (is_min == 't')
+		{
+			x++;
+			is_min = 'f';
+		}
+	}
+	return (0);
 }
