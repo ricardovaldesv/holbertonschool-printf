@@ -8,17 +8,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-/*
- * File: main.h
- * Author: Ricardo Valdes
- * Description: Header file of  prototypes for functions
- */
-
 int _printf(const char *format, ...);
-int _strlen(char *s);
-char cfunct(char *str, va_list arguments);
-char perfunct(char *str, __attribute__((unused)) va_list arguments);
-char sfunct(char *str, va_list arguments);
 
 /**
  * struct cases - Struct variables
@@ -35,6 +25,15 @@ typedef struct cases
 	char (*function)(char *str, va_list arguments);
 } type_cases;
 
+int form_h(const char *format, char *str,
+		va_list arguments, type_cases *cases);
+
 type_cases *get_cases();
+
+int _strlen(char *s);
+char cfunct(char *str, va_list arguments);
+char perfunct(char *str, __attribute__((unused)) va_list arguments);
+char sfunct(char *str, va_list arguments);
+char add(char *str, char format);
 
 #endif

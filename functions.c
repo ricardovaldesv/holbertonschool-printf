@@ -9,14 +9,10 @@
 char cfunct(char *str, va_list arguments)
 {
 	char ch = va_arg(arguments, int);
-
-	if (ch == '\0')
-	{
-		str[_strlen(str)] = ch;
-	}
-	else
 	str[_strlen(str) + 1] = '\0';
 	str[_strlen(str)] = ch;
+	if (ch == '\0')
+		return (1);
 	return (0);
 }
 /**
@@ -31,6 +27,20 @@ char perfunct(char *str, va_list arguments __attribute__((unused)))
 	str[_strlen(str)] = '%';
 	return (0);
 }
+
+/**
+ * add - add to the main string
+ * @str: main string
+ * @format: character to add
+ * Return: Void
+ */
+char add(char *str, char format)
+{
+	str[_strlen(str) + 1] = '\0';
+	str[_strlen(str)] = format;
+	return (0);
+}
+
 /**
  * sfunct - adds a string to the main string
  * @str: main string
