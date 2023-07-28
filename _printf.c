@@ -3,6 +3,7 @@
 /**
  * _printf - function that prints anything
  * @format: list of types of arguments
+ * Return: the number of character printed
  */
 
 int _printf(const char *format, ...)
@@ -10,12 +11,8 @@ int _printf(const char *format, ...)
 	int i = 0, x;
 	char *str = malloc(4096 * sizeof(char));
 	va_list arguments;
-	type_cases cases[] = {
-		{"%", perfunct},
-		{"c", cfunct},
-		{"s", sfunct},
-		{NULL, NULL}
-	};
+	type_cases *cases = get_cases();
+
 	if (str == NULL || format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		va_end(arguments);

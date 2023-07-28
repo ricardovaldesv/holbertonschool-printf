@@ -3,14 +3,15 @@
 /**
  * cfunct - add a character to the main string
  * @str: main string
- * @ch: character to add
+ * @arguments: arguments of specificator of format
  * Return: Void
  */
 char cfunct(char *str, va_list arguments)
 {
 	char ch = va_arg(arguments, int);
+
 	if (ch == '\0')
-	{   
+	{
 		str[_strlen(str)] = ch;
 	}
 	else
@@ -20,7 +21,8 @@ char cfunct(char *str, va_list arguments)
 }
 /**
  * perfunct - add a % to the main string
- * @str:main string
+ * @str:main stringi
+ * @arguments : arguments of specificator of format
  * Return: Void
  */
 char perfunct(char *str, va_list arguments __attribute__((unused)))
@@ -32,7 +34,7 @@ char perfunct(char *str, va_list arguments __attribute__((unused)))
 /**
  * sfunct - adds a string to the main string
  * @str: main string
- * @s: string to add
+ * @arguments : arguments of specificator of format
  * Return: Void
  */
 char sfunct(char *str, va_list arguments)
