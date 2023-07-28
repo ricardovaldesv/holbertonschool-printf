@@ -14,7 +14,6 @@
  * Description: Header file of  prototypes for functions
  */
 
-type_cases *get_cases();
 int _printf(const char *format, ...);
 int _strlen(char *s);
 char cfunct(char *str, va_list arguments);
@@ -35,5 +34,7 @@ typedef struct cases
 	char *ptr;
 	char (*function)(char *str, va_list arguments);
 } type_cases;
+
+type_cases *get_cases();
 
 #endif
