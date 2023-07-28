@@ -5,10 +5,10 @@
  * Return: length in characters
  */ 
 
-int _strlen(char *s) // function to check length of a string 
+int _strlen(char *s)
 {
-	int r = 0; //length of the string
-	int i; //iterator
+	int r = 0;
+	int i;
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		r = r + 1;

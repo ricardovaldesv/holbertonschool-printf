@@ -6,7 +6,7 @@
  * @ch: character to add
  * Return: Void
  */
-char cfunct(char *str, va_list arguments) // function case c
+char cfunct(char *str, va_list arguments)
 {
 	char ch = va_arg(arguments, int);
 	str[_strlen(str) + 1] = '\0';
@@ -18,7 +18,7 @@ char cfunct(char *str, va_list arguments) // function case c
  * @str:main string
  * Return: Void
  */
-char perfunct(char *str, va_list arguments __attribute__((unused)))// function case %
+char perfunct(char *str, va_list arguments __attribute__((unused)))
 {
 	str[_strlen(str) + 1] = '\0';
 	str[_strlen(str)] = '%';
@@ -30,7 +30,7 @@ char perfunct(char *str, va_list arguments __attribute__((unused)))// function c
  * @s: string to add
  * Return: Void
  */
-char sfunct(char *str, va_list arguments) // function case s
+char sfunct(char *str, va_list arguments)
 {
 	char *s = va_arg(arguments, char *);
 	int j = 0;
@@ -52,6 +52,6 @@ char sfunct(char *str, va_list arguments) // function case s
 			j++;
 		}
 	}
-	str[_strlen(str)] = '\0'
+	str[_strlen(str)] = '\0';
 		return (0);
 }
