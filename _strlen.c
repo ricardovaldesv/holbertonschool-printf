@@ -21,7 +21,7 @@ int _strlen(char *s)
 /**
  * powr - returns the power y of base x
  * @base: base number
- * @y: exponential
+ * @expo: exponential
  *
  * Return: Result
  */

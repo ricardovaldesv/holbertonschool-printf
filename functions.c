@@ -77,17 +77,14 @@ char sfunct(char *str, va_list arguments)
 /**
  * dfunct - function to a number base 10 to the main string
  * @str: pointer to string
- * @num: integer to print
+ * @arguments: integer to print
  *
  * Return: Void
  */
 char dfunct(char *str, va_list arguments)
 {
 	int num = va_arg(arguments, int);
-	int a = 0;
-	int x;
-	int i;
-	int p;
+	int a = 0, x, i, p;
 	char is_min = 'f';
 
 	if (num == -2147483648)
